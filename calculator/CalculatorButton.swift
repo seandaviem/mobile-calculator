@@ -34,6 +34,8 @@ class CalculatorButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = (frame.height) / 2
+//        self.frame.size = CGSize(width: 75, height: 75)
+
     }
     
     func setupButton() {
@@ -41,6 +43,9 @@ class CalculatorButton: UIButton {
         clipsToBounds = true
         setTitle(label, for: .normal)
         setTitleColor(.white, for: .normal)
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalToConstant: 75).isActive = true
+        heightAnchor.constraint(equalToConstant: 75).isActive = true
     }
 
 }
